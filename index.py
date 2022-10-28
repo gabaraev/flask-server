@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 import vk
-from chatbot import getAnswer
+from chatbot import predict_answer
 
 
 api = vk.API(access_token='9c3ce37a9c3ce37a9c3ce37a929f2dca2b99c3c9c3ce37aff6811541c8a4debfafab744', v='5.131')
@@ -27,5 +27,5 @@ def sic():
 @app.route('/', methods=['POST'])
 def post():
     content = request.json['content']
-    answer = getAnswer(content)
+    answer = predict_answer(content)
     return answer
