@@ -25,7 +25,7 @@ def sic():
 
 @app.route('/vk-com-post', methods=['GET'])
 def com():
-    raw = api.wall.get(owner_id = -485005212, count = 1)
+    raw = api.wall.get(owner_id = 485005212, count = 1)
     content = raw['items'][0]['text']
     return content
 
