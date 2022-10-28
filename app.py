@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 import vk
 from chatbot import predict_answer
+from flask_cors import CORS
 
 
 api = vk.API(access_token='9c3ce37a9c3ce37a9c3ce37a929f2dca2b99c3c9c3ce37aff6811541c8a4debfafab744', v='5.131')
@@ -9,6 +10,7 @@ api = vk.API(access_token='9c3ce37a9c3ce37a9c3ce37a929f2dca2b99c3c9c3ce37aff6811
 
 
 app = Flask(__name__)
+CORS(app, origins=['https://reflex-companion.web.app/'])
 
 @app.route('/vk-main-post', methods=['GET'])
 def main():
