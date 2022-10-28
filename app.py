@@ -24,13 +24,13 @@ def sic():
     return content
 
 @app.route('/vk-com-post', methods=['GET'])
-def sic():
+def com():
     raw = api.wall.get(owner_id = -485005212, count = 1)
     content = raw['items'][0]['text']
     return content
 
 @app.route('/vk-abit-post', methods=['GET'])
-def sic():
+def abit():
     raw = api.wall.get(owner_id = -205247745, count = 1)
     content = raw['items'][0]['text']
     return content
