@@ -3,3 +3,4 @@ scikit-learn==1.0.2
 flask==2.2.2
 vk==3.0
 nltk==3.7
+gunicorn==20.1.0
