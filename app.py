@@ -11,7 +11,7 @@ api = vk.API(access_token='9c3ce37a9c3ce37a9c3ce37a929f2dca2b99c3c9c3ce37aff6811
 
 
 app = Flask(__name__)
-CORS(app, origins=['https://reflex-companion.web.app/'])
+CORS(app)
 
 @app.route('/vk-main-post', methods=['GET'])
 @cross_origin()
@@ -25,7 +25,7 @@ def main():
 @cross_origin()
 def sic():
     raw = api.wall.get(owner_id = -76527561, count = 1)
-    content = raw['items'][0]['text']
+    content = raw['items']
     return content
 
 @app.route('/vk-com-post', methods=['GET'])
@@ -44,6 +44,7 @@ def abit():
     
 
 @app.route('/', methods=['POST'])
+@cross_origin()
 def post():
     content = request.json['content']
     answer = predict_answer(content)
