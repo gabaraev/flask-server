@@ -17,7 +17,7 @@ CORS(app)
 @cross_origin()
 def main():
     raw = api.wall.get(owner_id = -47535294, count = 1)
-    content = raw['items'][0]['text']
+    content = raw['items']
     
     return content
 
@@ -32,14 +32,14 @@ def sic():
 @cross_origin()
 def com():
     raw = api.wall.get(owner_id = 485005212, count = 1)
-    content = raw['items'][0]['text']
+    content = raw['items']
     return content
 
 @app.route('/vk-abit-post', methods=['GET'])
 @cross_origin()
 def abit():
     raw = api.wall.get(owner_id = -205247745, count = 1)
-    content = raw['items'][0]['text']
+    content = raw['items']
     return content
     
 
